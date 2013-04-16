@@ -24,9 +24,15 @@ font-weight : bold ;
 width : 250px ;
 box-shadow : -5px 5px 15px black ;
 -webkit-transition : background 0.3s linear;
+cursor : hand ;
 }
 
 div#menu div#option:hover {
 background : #00e ;
 box-shadow : -5px 5px 10px black ;
+}
+#gamebox {
+width : 700px;
+height : 500px ;
+background : white ;
 }
