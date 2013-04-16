@@ -5,8 +5,15 @@
 <script src="scripts/redirect.js"></script>
 </head>
 <body>
-<h1 onclick="redirect('index.html')">Flytastic</h1>
-
-<div id="gamebox"></div>
+<center><div id="gamebox"></div></center>
+<script>
+var gamebox = document.getElementById('gamebox');
+var imgx = document.createElement('img');
+imgx.src='images/plane1.png';
+imgx.style.width = '100px';
+imgx.style.height = '150px';
+imgx.style.webkitTransform = "rotate(-90deg)";
+gamebox.appendChild(imgx);
+</script>
 </body>
 </html>
