@@ -3,41 +3,27 @@
 <title>.: Flytastic :.</title>
 <link rel="stylesheet" href="styles/flytastic.css">
 <script src="scripts/redirect.js"></script>
+<script src="../mashiron/lib/mashiron.js"></script>
 </head>
-<body>
+<body style="background : white;">
 <center><div id="gamebox"></div></center>
 <script>
-var gamebox = document.getElementById('gamebox');
-// ------------
-var imgx = document.createElement('img');
-imgx.src='images/plane1.png';
-imgx.style.width = '100px';
-imgx.style.height = '150px';
-imgx.style.position = 'absolute';
-imgx.style.left = 600;
-imgx.style.top = 500;
-gamebox.appendChild(imgx);
-//------------
-var imgy = document.createElement('img');
-imgy.src='images/plane2.png';
-imgy.style.width = '100px';
-imgy.style.height = '150px';
-imgy.style.position = 'absolute';
-imgy.style.left = 350;
-imgy.style.top = 100;
-//imgy.style.webkitTransform = "rotate(-90deg)";
-gamebox.appendChild(imgy);
-// ------------
-var imgz = document.createElement('img');
-imgz.src='images/plane2.png';
-imgz.style.width = '100px';
-imgz.style.height = '150px';
-imgz.style.position = 'absolute';
-imgz.style.left = 850;
-imgz.style.top = 100;
-//imgz.style.webkitTransform = "rotate(-90deg)";
-gamebox.appendChild(imgz);
-//----
+Mashiron.init('gamebox');
+Mashiron.container.setSize(700,500);
+Mashiron.container.setBG('white');
+
+
+bx = Array();
+for(i=0;i<50;i++){
+    b = new Box();
+    b.insertIMG('images/arbol.png');
+    b.setPosXY(Math.floor(Math.random()*1000),Math.floor(Math.random()*800));
+    bx.push(b);
+}
+b1 = new Box();
+b1.insertIMG('images/plane1.png');
+b1.setPosXY(500,200);
+
 
 function gofront(img ,movem){
     var x = img.style.left;
@@ -51,8 +37,8 @@ function gofront(img ,movem){
     }
     var x = window.setInterval(function(){ move(); }, 10);
 }
+gofront(b1.img,'front')
 
-gofront(imgx,'front');
 //gofront(imgy,'back');
 </script>
 </body>
